@@ -32,6 +32,10 @@ int main(void)
 
 	while(NRF24L01_Check())	//检查NRF24L01是否在位.	
 	{
+		printf("page 1");
+		USART1->DR =13;
+		while((USART1->SR&0X40)==0);
+		
 		printf("t0.txt=");
 		printf("\"NO NRF24L01\"");
 		delay_ms(200);
